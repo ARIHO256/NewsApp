@@ -11,7 +11,7 @@ from django.core.exceptions import ValidationError
 from django.shortcuts import render, get_object_or_404
 from django.http import Http404
 
-
+#the home view
 class Home(ListView):
     model = Post
     template_name = 'news/index.html'

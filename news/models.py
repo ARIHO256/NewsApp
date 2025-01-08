@@ -18,7 +18,7 @@ class Category(models.Model):
         verbose_name_plural = 'Categories'
         ordering = ['title']
 
-
+#the project models on tag
 class Tag(models.Model):
     title = models.CharField(max_length=50)
     slug = models.SlugField(max_length=50, verbose_name='Slug_url', unique=True)
@@ -34,7 +34,7 @@ class Tag(models.Model):
         verbose_name_plural = 'Tags'
         ordering = ['title']
 
-
+#the post model
 class Post(models.Model):
     title = models.CharField(max_length=255, verbose_name='Name')
     slug = models.SlugField(max_length=255, unique=True, verbose_name='Link')
@@ -58,7 +58,7 @@ class Post(models.Model):
         verbose_name_plural = 'Articles'
         ordering = ['-created_at']
     
-
+#the comment model
 class Comment(models.Model):
     post = models.ForeignKey('Post', on_delete=models.CASCADE, related_name='comments')
     username = models.CharField(max_length=100)
